@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyQuanCafe
 {
@@ -27,7 +27,7 @@ namespace QuanLyQuanCafe
             List<Table> tableList = TableDAO.Instance.LoadTableList();
             foreach (Table item in tableList)
             {
-                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                System.Windows.Forms.Button btn = new System.Windows.Forms.Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
 
                 btn.Click += btn_Click;
@@ -52,15 +52,26 @@ namespace QuanLyQuanCafe
 
         void ShowBill(int id)
         {
+            lsvBill.Items.Clear();
+            List<QuanLyQuanCafe.DTO.Menu> listBillInfo =MenuDAO.Instance.GetListMenuByTable(id);
+            
+            foreach(QuanLyQuanCafe.DTO.Menu item in listBillInfo)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString());
+                lsvItem.SubItems.Add(item.TotalPrice.ToString());
 
+                lsvBill.Items.Add(lsvItem);
+            }
         }
         #endregion
 
 
         #region Event
-        private void btn_Click(object sender, EventArgs e)
+         void btn_Click(object sender, EventArgs e)
         {
-            int tableID=(sender as Table).ID;
+            int tableID=((sender as System.Windows.Forms.Button).Tag as Table).ID;
             ShowBill(tableID);
         }
 
