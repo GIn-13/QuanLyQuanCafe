@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Globalization;
 
 namespace QuanLyQuanCafe
 {
@@ -19,9 +20,25 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
             LoadTable();
+            LoadCategory();
         }
 
         #region Method
+
+        void LoadCategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
+            cbCategory.DisplayMember = "name";
+            cbCategory.DataSource = listCategory;
+        }
+
+        void LoadFoodListByCategoryID(int id)
+        {
+            List<Food> listFood = FoodDAO.Instance.GetFoodByCategoryID(id);
+            cbFood.DisplayMember = "name";
+            cbFood.DataSource = listFood;
+        }
+
         void LoadTable()
         {
             List<Table> tableList = TableDAO.Instance.LoadTableList();
@@ -54,7 +71,7 @@ namespace QuanLyQuanCafe
         {
             lsvBill.Items.Clear();
             List<QuanLyQuanCafe.DTO.Menu> listBillInfo =MenuDAO.Instance.GetListMenuByTable(id);
-            
+            float outTotalPrice = 0;
             foreach(QuanLyQuanCafe.DTO.Menu item in listBillInfo)
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
@@ -62,8 +79,14 @@ namespace QuanLyQuanCafe
                 lsvItem.SubItems.Add(item.Price.ToString());
                 lsvItem.SubItems.Add(item.TotalPrice.ToString());
 
+                outTotalPrice += item.TotalPrice;
                 lsvBill.Items.Add(lsvItem);
             }
+
+            CultureInfo culture = new CultureInfo("vi-VN");
+            //Thread.CurrentThread.CurrentCulture=culture;
+
+            txbTotalPrice.Text = outTotalPrice.ToString("c",culture);
         }
         #endregion
 
@@ -93,8 +116,20 @@ namespace QuanLyQuanCafe
 
         }
 
+
         #endregion
 
-        
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            System.Windows.Forms.ComboBox cb = sender as System.Windows.Forms.ComboBox;
+
+            if (cb.SelectedItem == null)
+                return;
+
+            Category selected = cb.SelectedItem as Category;
+            id = selected.ID;
+            LoadFoodListByCategoryID(id);
+        }
     }
 }
