@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txbReEnterPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txbNewPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txbDisplayName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbPassWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txbDisplayName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txbNewPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txbReEnterPassword = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +67,106 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(411, 339);
             this.panel1.TabIndex = 1;
+            // 
+            // btnExit
+            // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Location = new System.Drawing.Point(302, 279);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(89, 38);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(178, 279);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(98, 38);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txbReEnterPassword);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Location = new System.Drawing.Point(4, 230);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(404, 43);
+            this.panel6.TabIndex = 4;
+            // 
+            // txbReEnterPassword
+            // 
+            this.txbReEnterPassword.Location = new System.Drawing.Point(108, 11);
+            this.txbReEnterPassword.Name = "txbReEnterPassword";
+            this.txbReEnterPassword.PasswordChar = '*';
+            this.txbReEnterPassword.Size = new System.Drawing.Size(279, 20);
+            this.txbReEnterPassword.TabIndex = 2;
+            this.txbReEnterPassword.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Xác minh";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txbNewPassword);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(4, 181);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(404, 43);
+            this.panel5.TabIndex = 3;
+            // 
+            // txbNewPassword
+            // 
+            this.txbNewPassword.Location = new System.Drawing.Point(108, 11);
+            this.txbNewPassword.Name = "txbNewPassword";
+            this.txbNewPassword.PasswordChar = '*';
+            this.txbNewPassword.Size = new System.Drawing.Size(279, 20);
+            this.txbNewPassword.TabIndex = 2;
+            this.txbNewPassword.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Mật khẩu mới";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txbDisplayName);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(4, 83);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(404, 43);
+            this.panel4.TabIndex = 2;
+            // 
+            // txbDisplayName
+            // 
+            this.txbDisplayName.Location = new System.Drawing.Point(108, 11);
+            this.txbDisplayName.Name = "txbDisplayName";
+            this.txbDisplayName.Size = new System.Drawing.Size(279, 20);
+            this.txbDisplayName.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tên hiển thị";
             // 
             // panel3
             // 
@@ -121,104 +221,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.txbDisplayName);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(4, 83);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(404, 43);
-            this.panel4.TabIndex = 2;
-            // 
-            // txbDisplayName
-            // 
-            this.txbDisplayName.Location = new System.Drawing.Point(108, 11);
-            this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.Size = new System.Drawing.Size(279, 20);
-            this.txbDisplayName.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tên hiển thị";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txbNewPassword);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(4, 181);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(404, 43);
-            this.panel5.TabIndex = 3;
-            // 
-            // txbNewPassword
-            // 
-            this.txbNewPassword.Location = new System.Drawing.Point(108, 11);
-            this.txbNewPassword.Name = "txbNewPassword";
-            this.txbNewPassword.PasswordChar = '*';
-            this.txbNewPassword.Size = new System.Drawing.Size(279, 20);
-            this.txbNewPassword.TabIndex = 2;
-            this.txbNewPassword.UseSystemPasswordChar = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Mật khẩu mới";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txbReEnterPassword);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(4, 230);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(404, 43);
-            this.panel6.TabIndex = 4;
-            // 
-            // txbReEnterPassword
-            // 
-            this.txbReEnterPassword.Location = new System.Drawing.Point(108, 11);
-            this.txbReEnterPassword.Name = "txbReEnterPassword";
-            this.txbReEnterPassword.PasswordChar = '*';
-            this.txbReEnterPassword.Size = new System.Drawing.Size(279, 20);
-            this.txbReEnterPassword.TabIndex = 2;
-            this.txbReEnterPassword.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Xác minh";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(178, 279);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(98, 38);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(302, 279);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(89, 38);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // fAccountProfile
             // 
             this.AcceptButton = this.btnUpdate;
@@ -231,16 +233,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

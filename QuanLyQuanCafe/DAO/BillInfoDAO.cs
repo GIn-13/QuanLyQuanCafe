@@ -39,6 +39,9 @@ namespace QuanLyQuanCafe.DAO
             DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idFood , @count", new object[] { idBill, idFood, count });
         }
 
-
+        public void DeleteBillInfoByFoodID(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("Delete dbo.BillInfo Where idFood = " + id);
+        }
     }
 }

@@ -49,6 +49,18 @@ namespace QuanLyQuanCafe.DAO
 
             }
         }
+
+        public void CheckOut(int id,int discount,float totalPrice)
+        {
+            string query = "Update dbo.Bill SET dateCheckOut = GETDATE() , status = 1, totalPrice = " + totalPrice + ", discount = " + discount + " WHERE id = " + id;
+            DataProvider.Instance.ExecuteNonQuery(query);
+
+        }
+        
+        public DataTable GetBillistByDate(DateTime checkIn ,DateTime checkOut)
+        {
+           return  DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
     }
 }
 

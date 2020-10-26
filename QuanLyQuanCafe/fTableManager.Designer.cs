@@ -47,6 +47,7 @@
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnDiscount = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
+            this.txbProcessPrice = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -185,6 +186,7 @@
             this.panel5.Controls.Add(this.nmDiscount);
             this.panel5.Controls.Add(this.btnDiscount);
             this.panel5.Controls.Add(this.btnCheckOut);
+            this.panel5.Controls.Add(this.txbProcessPrice);
             this.panel5.Location = new System.Drawing.Point(466, 409);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(444, 83);
@@ -218,6 +220,7 @@
             this.btnSwitchTable.TabIndex = 6;
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
+            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
             // nmDiscount
             // 
@@ -244,6 +247,20 @@
             this.btnCheckOut.TabIndex = 3;
             this.btnCheckOut.Text = "Thanh Toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
+            // txbProcessPrice
+            // 
+            this.txbProcessPrice.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbProcessPrice.ForeColor = System.Drawing.Color.DarkRed;
+            this.txbProcessPrice.Location = new System.Drawing.Point(190, 49);
+            this.txbProcessPrice.Name = "txbProcessPrice";
+            this.txbProcessPrice.ReadOnly = true;
+            this.txbProcessPrice.Size = new System.Drawing.Size(10, 25);
+            this.txbProcessPrice.TabIndex = 9;
+            this.txbProcessPrice.Text = "0";
+            this.txbProcessPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbProcessPrice.Visible = false;
             // 
             // panel2
             // 
@@ -341,5 +358,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox txbTotalPrice;
+        private System.Windows.Forms.TextBox txbProcessPrice;
     }
 }
